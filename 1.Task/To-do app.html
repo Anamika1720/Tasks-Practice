@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do app</title>
+</head>
+<body>
+    <ul id="list">
+        <li>Litchi</li>
+        <li>Mango</li>
+        <li>Papaya</li>
+    </ul>
+    <button id="btn-click">Add new tasks</button>
+</body>
+</html>
+
+<script>
+    const listElem = document.getElementById("list");
+    const btnElem = document.getElementById("btn-click");
+
+    btnElem.addEventListener("click", () => {
+        const data = prompt("Enter your data");
+        console.log("data:", data);
+
+        if(!data) {
+            console.log("data not found");
+        } else {
+            const listData = document.createElement("li");
+            listData.innerText = data;
+            listElem.appendChild(listData);
+        }
+    })
+</script>
