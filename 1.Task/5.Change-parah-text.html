@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change parah text</title>
+</head>
+<body>
+    <h1>Change para text using js</h1>
+    <h2>using js</h2>
+    <p id="change-text">Hello, how are you?</p>
+    <button id="btn-click">Click to change text</button>
+</body>
+</html>
+
+<script>
+    const paraElem = document.getElementById("change-text");
+    const btnElem = document.getElementById("btn-click");
+
+    if(!btnElem){
+        console.log("btnElem not found");
+    } else {
+    btnElem.addEventListener("click", () => {
+        paraElem.innerText = "Hey! i am good."
+    })
+}
+
+</script>

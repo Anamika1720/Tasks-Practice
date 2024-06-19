@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click</title>
+</head>
+<body>
+    <h1>Change body background on button click</h1>
+    <button id="btn-red">Click here</button>
+    <button id="btn-blue">Click here</button>
+</body>
+</html>
+
+<script>
+
+const btnElem = document.getElementById("btn-red");
+const btnElem2 = document.getElementById("btn-blue");
+
+
+    btnElem.addEventListener("click", () => {
+        document.body.style.backgroundColor = "red";
+    })
+
+    btnElem2.addEventListener("click", () => {
+        document.body.style.backgroundColor = "blue";
+    })
+    
+</script>

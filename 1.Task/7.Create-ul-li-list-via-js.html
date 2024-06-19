@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Create list</h1>
+    <div id="box">
+
+    </div>
+</body>
+</html>
+
+<script>
+    const boxElem = document.getElementById("box");
+
+        //create ul
+        const ulElem = document.createElement("ul");
+
+        //append 
+        boxElem.appendChild(ulElem);
+
+        const days = ["Saturday", "Sunday", "Monday","Tuesday"];
+        for(i=0; i< days.length; i++) {
+            //create li element
+
+            const dayElem = document.createElement("li");
+            const currDay = days[i];
+            console.log(currDay);
+            dayElem.innerText = currDay;
+
+            ulElem.appendChild(dayElem);
+        }
+
+</script>
