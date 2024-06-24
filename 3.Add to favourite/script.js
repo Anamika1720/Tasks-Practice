@@ -54,6 +54,7 @@ const dataElem = document.getElementById("data-products");
         liElem.appendChild(priceElem);  
         liElem.appendChild(descElem);  
         liElem.appendChild(cateElem);  
+        liElem.appendChild(imgElem);
         liElem.appendChild(favButton);
 
         dataElem.appendChild(liElem);
@@ -62,11 +63,16 @@ const dataElem = document.getElementById("data-products");
 
     // Function to add product to favorites
     function addToFavourites(product) {
-      if (!favourites.includes(product)) {
+
+        const isAlreadyFavorite = favourites.some(fav => fav.id === product.id);
+
+      if (!isAlreadyFavorite) {
         favourites.push(product);
         
         localStorage.setItem("favourites", JSON.stringify(favourites));
         renderFavourites();
+      } else {
+        product += favourites;
       }
     }
 
@@ -92,11 +98,16 @@ const dataElem = document.getElementById("data-products");
         const cateElem = document.createElement("p");
         cateElem.innerText = `Category: ${favourite.category}`;
 
+        const imgElem = document.createElement("img")
+        imgElem.src = favourite.image;
+        imgElem.alt = favourite.title;
+
         liElem.appendChild(idElem);
         liElem.appendChild(titleElem);  
         liElem.appendChild(priceElem);  
         liElem.appendChild(descElem);  
         liElem.appendChild(cateElem);  
+        liElem.appendChild(imgElem);
 
         favoritesElem.appendChild(liElem);
       }
