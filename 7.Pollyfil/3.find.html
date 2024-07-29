@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Example</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    let arr = [
+        { id: 1, name: "A" },
+        { id: 2, name: "B" },
+        { id: 3, name: "C" },
+    ];
+
+    Array.prototype.myFind = function (id) {
+        console.log(this);
+
+        for (let i = 0; i < this.length; i++) {
+            if (this[i].id === id) {
+                return this[i];
+            }
+        }
+        return false;
+    };
+
+    let result = arr.myFind(2);
+    console.log(result);
+
+</script>
